@@ -11,7 +11,10 @@ export class AppComponent {
 
   }
 
- Test(){
-    this.toast.positive()
+ positiveTest(){
+    this.toast.positive('bienvenido')
+}
+  negativeTest(){
+  this.toast.negative('error')
 }
 }

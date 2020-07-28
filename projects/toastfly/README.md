@@ -1,24 +1,58 @@
-# Toastfly
+# ToastFly
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+## Instalacion
 
-## Code scaffolding
+npm install toastfly
 
-Run `ng generate component component-name --project toastfly` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project toastfly`.
-> Note: Don't forget to add `--project toastfly` or else it will be added to the default project in your `angular.json` file. 
+## Configuracion
 
-## Build
+* importamos ToastFlyModule en nuestro app NgModel
 
-Run `ng build toastfly` to build the project. The build artifacts will be stored in the `dist/` directory.
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ToastflyModule } from 'toastfly'
 
-## Publishing
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ToastflyModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-After building your library with `ng build toastfly`, go to the dist folder `cd dist/toastfly` and run `npm publish`.
 
-## Running unit tests
+## Uso 
 
-Run `ng test toastfly` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { Component, Testability } from '@angular/core';
+import { ToastflyService } from 'toastfly'
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'toastflytest';
+ constructor(private toast :  ToastflyService){
 
-## Further help
+  }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ positiveTest(){
+    this.toast.positive('bienvenido')
+}
+  negativeTest(){
+  this.toast.negative('error')
+}
+}
+
+## Desarrollo
+ToastFly es un producto desarrollado por CodeBaq
+## License 
+MIT
