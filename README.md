@@ -1,4 +1,8 @@
 # ToastFly
+Toast o Alertas flotantes con css para tus proyectos angular
+## Novedades
+ * Toast positivo
+ * Toast Negativo
 
 ## Instalacion
 
